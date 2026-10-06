@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Care Map London</title>
+<meta name="description" content="A public-data model of who a digital-first NHS shuts out, and which change helps whom. Yongwoo Lee · Pranav Babu, Royal College of Art.">
+<meta property="og:title" content="Care Map London — who digital-first leaves out">
+<meta property="og:description" content="A public-data model of who a digital-first NHS shuts out, and which change helps whom.">
+<meta property="og:image" content="https://lyw980311-ux.github.io/care-map-london-info/img/og.png">
+<meta property="og:url" content="https://lyw980311-ux.github.io/care-map-london-info/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --bg: #f3f6fa; --panel: #ffffff; --bg2: #eaf0f6; --border: #c9d5e2;
+    --t1: #0f1c2e; --t2: #3a5068; --t3: #56687c;
+    --teal: #007265; --red: #c22727;
+    --sans: system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box }
+  html { -webkit-text-size-adjust: 100% }
+  body { margin: 0; background: var(--bg); color: var(--t1); font-family: var(--sans); font-size: 17px; line-height: 1.55 }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 0 16px 48px }
+  header.top { padding: 22px 0 10px; display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border) }
+  .mark { font-family: var(--mono); font-weight: 700; letter-spacing: .28em; color: var(--teal); font-size: 14px }
+  .event { font-size: 13px; color: var(--t3) }
+  h1 { font-size: clamp(36px, 9vw, 56px); line-height: 1.02; letter-spacing: -.02em; margin: 28px 0 6px }
+  .strap { font-size: clamp(21px, 5vw, 28px); font-weight: 700; color: var(--teal); margin: 0 0 14px; line-height: 1.2 }
+  .summary { font-size: 19px; font-weight: 700; margin: 0 0 22px }
+  figure { margin: 0 0 22px }
+  figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 10px; background: var(--panel) }
+  figcaption { font-size: 14px; color: var(--t2); margin-top: 8px }
+  h2 { font-size: 13px; font-family: var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--teal); margin: 34px 0 12px }
+  p { margin: 0 0 14px }
+  .stats { display: grid; gap: 12px; grid-template-columns: 1fr }
+  @media (min-width: 640px) { .stats { grid-template-columns: repeat(3, 1fr) } }
+  .stat { background: var(--panel); border: 1px solid var(--border); border-top: 4px solid var(--teal); border-radius: 10px; padding: 14px 14px 12px }
+  .stat .n { font-family: var(--mono); font-weight: 700; font-size: 30px; line-height: 1.1; letter-spacing: -.02em; white-space: nowrap }
+  .stat .l { font-size: 15px; color: var(--t2); margin-top: 6px; line-height: 1.4 }
+  .stat .q { font-family: var(--mono); font-size: 12px; color: var(--t3); margin-top: 8px }
+  ol.how { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px }
+  ol.how li { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px 12px 54px; position: relative }
+  ol.how li b { display: block; font-size: 17px }
+  ol.how li span.k { position: absolute; left: 14px; top: 12px; width: 28px; height: 28px; border-radius: 50%; background: var(--teal); color: #fff; font-weight: 700; display: grid; place-items: center; font-size: 15px }
+  .note { background: var(--bg2); border-radius: 10px; padding: 12px 14px; font-size: 15px; color: var(--t2) }
+  .note b { color: var(--t1) }
+  .team { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 16px }
+  .team .who { font-size: 20px; font-weight: 700 }
+  .team .org { color: var(--t2); margin-bottom: 12px }
+  .links { display: flex; flex-wrap: wrap; gap: 10px }
+  .btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 22px; font-weight: 700; text-decoration: none; border: 2px solid var(--teal); color: var(--teal); background: #fff }
+  .btn.primary { background: var(--teal); color: #fff }
+  .btn:focus-visible { outline: 3px solid var(--t1); outline-offset: 2px }
+  .src { font-size: 13px; color: var(--t3); margin-top: 26px; border-top: 1px solid var(--border); padding-top: 14px }
+  a { color: var(--teal) }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="mark">CARE MAP LONDON</span>
+    <span class="event">Health Mission exhibition · Museum of London Docklands · 7 October 2026</span>
+  </header>
+
+  <h1>Care Map London</h1>
+  <p class="strap">Who digital-first leaves out</p>
+  <p class="summary">A public-data model of who a digital-first NHS shuts out, and which change helps whom.</p>
+
+  <figure>
+    <img src="img/map.png" width="1400" height="905" alt="Map of London coloured by Elena's safety score out of 95: 73 in Hackney, 9 in Bexley.">
+    <figcaption><b>Elena’s safety score</b> out of 95 in each of London’s 32 boroughs and the City — a model estimate on public data. Same person, different borough. Elena is one of six composite personas.</figcaption>
+  </figure>
+
+  <h2>About</h2>
+  <p>Care Map London is a decision-support instrument for boroughs, the London Health Board and NHS services. The London Health Mission cites a roughly 20-year gap in healthy life expectancy across London. Digital-first NHS services can deepen it, shutting out people with no internet, ID, English or fixed address. Across 32 boroughs and the City, six composite personas try an eight-step GP portal: 129 of 198 plays stop before the end (model estimate). A two-minute kiosk and a dashboard with a two-point policy budget show who each change moves. Practitioners see who will not arrive, NHS London tests services before launch, and patients’ access to care depends less on postcode.</p>
+
+  <h2>Why it matters</h2>
+  <div class="stats">
+    <div class="stat"><div class="n">129 of 198</div><div class="l">person × area plays of the GP portal (6 people × 33 areas) stop before the end</div><div class="q">model estimate on public data</div></div>
+    <div class="stat"><div class="n">45 → 80</div><div class="l">Elena’s access failure: 45 with a human Community Health Navigator, 80 with NHS 111 AI triage. <b>Same person, different design.</b></div><div class="q">0–100, 2025 London average, model estimate</div></div>
+    <div class="stat"><div class="n">29 of 33</div><div class="l">James, 80 and offline, is blocked at step 2 (Web Access) of the GP portal in 29 of 33 areas.</div><div class="q">model estimate</div></div>
+  </div>
+
+  <h2>How it works</h2>
+  <ol class="how">
+    <li><span class="k">1</span><b>Try it at the kiosk — two minutes</b>Pick what makes care hard for you, pick where you live, then try a 2033 scenario — a fully digital GP portal — and see where it could stop you. Five languages, no app, no account.</li>
+    <li><span class="k">2</span><b>Bring your result to the table</b>The dashboard shows a map, a safety score per persona and area, the eight journey steps, and a policy budget: 2 points across 5 levers. Who do you fund — and who do you leave out?</li>
+    <li><span class="k">3</span><b>Decide before launch</b>Boroughs, the London Health Board and NHS services can see where each group stops and which change moves whom — before a digital service goes live.</li>
+  </ol>
+
+  <figure style="margin-top:22px">
+    <a href="img/diagram.png"><img src="img/diagram.png" width="2000" height="689" alt="System diagram: public data feeds the model (33 areas × six composite personas × five future NHS services × eight steps); the model drives three surfaces (kiosk, dashboard, phone view) used by boroughs, the London Health Board and NHS services; funding a lever shows who it moves and who is left out."></a>
+    <figcaption>From public data to a decision. Tap to enlarge.</figcaption>
+  </figure>
+
+  <p class="note"><b>Read the numbers as model estimates, not records.</b> The six people are composite personas built from published research, not individuals. It is decision support for public services — not an app the excluded are expected to use.</p>
+
+  <h2>Team &amp; contact</h2>
+  <div class="team">
+    <div class="who">Yongwoo Lee · Pranav Babu</div>
+    <div class="org">Royal College of Art</div>
+    <div class="links">
+      <a class="btn primary" href="https://www.linkedin.com/in/yongwoolee98">Yongwoo on LinkedIn</a>
+      <a class="btn" href="mailto:lyw980311@gmail.com?subject=Care%20Map%20London">Email Yongwoo</a>
+      <a class="btn" href="contact.vcf" download="Yongwoo_Lee.vcf">Save contact</a>
+    </div>
+  </div>
+
+  <p class="src">Data: City of Sanctuary · Charity Commission · ONS Census 2021 · IoD 2025 · GMCA DERI · GP Patient Survey 2026 · NHS England · OHID · DHSC ASCOF · CQC · CHAIN. All figures are model estimates on public data.</p>
+</div>
+</body>
+</html>
